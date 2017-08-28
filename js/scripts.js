@@ -31,23 +31,31 @@ var petNameFromUserJ ="";
 var petAgeFromUserJ = "";
 var adoptedFromUserJ = "";
 var petMarkingsFromUserJ = "";
-var petBreedFromUser ="";
+var petBreedFromUserJ ="";
 
 //submit function
 $(document).ready(function() {
   $(".theForm").submit(function(event) {
     event.preventDefault();
     petNameFromUserJ = $("#petNameFromUser").val();
+    console.log(petNameFromUserJ);
     petAgeFromUserJ = $("#petAgeFromUser").val();
     adoptedFromUserJ = $("#adoptedFromUser").val();
     petMarkingsFromUserJ = $("#petMarkingsFromUser").val();
     petBreedFromUserJ = $("#petBreedFromUser").val();
 
+    if(adoptedFromUserJ === "2"){
+      adoptedFromUserJ = true;
+    }else{
+      adoptedFromUserJ = false;
+    };
+
     var myPet = new Pet(petNameFromUserJ, petAgeFromUserJ,adoptedFromUserJ, petMarkingsFromUserJ,petBreedFromUserJ);
+    console.log(myPet);
 
-    $(".theOutput").append(myPet.petName+" "+myPet.age+" "+myPet.adopted+" "+myPet.markings+" "+myPet.breed);
-
-
+    $(".theOutput").append("<p>"+myPet.display()+"</p>");
+  });
+});
 //take input from each detail into variables
 //(example: var age = $("#petAge").val(); )
 
