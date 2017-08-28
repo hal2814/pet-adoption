@@ -10,12 +10,17 @@ function Pet(petName,age,adopted,markings,breed){
 };
 
 //Is pet adopted function- true or false
-function isAdopted(){
+function isAdopted(bool){
+  if(bool){
+    return "is adopted.";
+  }else{
+    return "not adopted";
+  }
 };
 //get pet details (aka: name, age, breed and markings)
 
 Pet.prototype.display = function () {
-
+  return "Pet name: "+this.petName+ "<br>Age: "+this.age+"<br>Adoption status: "+isAdopted(this.adopted)+"<br>Markings: "+this.markings+"<br>breed: "+this.breed;
 };
 
 //Front End-----------------------------------------|
