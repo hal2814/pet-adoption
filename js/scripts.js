@@ -10,7 +10,7 @@ function Pet(petName,age,adopted,markings,breed){
 };
 
 //Is pet adopted function- true or false
-function isAdopted(){
+function isAdopted(bool){
 };
 //get pet details (aka: name, age, breed and markings)
 
@@ -20,11 +20,28 @@ Pet.prototype.display = function () {
 
 //Front End-----------------------------------------|
 
-
 //allow user to add a new pet (aka new object of type pet)
 
+var petNameFromUserJ ="";
+var petAgeFromUserJ = "";
+var adoptedFromUserJ = "";
+var petMarkingsFromUserJ = "";
+var petBreedFromUser ="";
 
 //submit function
+$(document).ready(function() {
+  $(".theForm").submit(function(event) {
+    event.preventDefault();
+    petNameFromUserJ = $("#petNameFromUser").val();
+    petAgeFromUserJ = $("#petAgeFromUser").val();
+    adoptedFromUserJ = $("#adoptedFromUser").val();
+    petMarkingsFromUserJ = $("#petMarkingsFromUser").val();
+    petBreedFromUserJ = $("#petBreedFromUser").val();
+
+    var myPet = new Pet(petNameFromUserJ, petAgeFromUserJ,adoptedFromUserJ, petMarkingsFromUserJ,petBreedFromUserJ);
+
+    $(".theOutput").append(myPet.petName+" "+myPet.age+" "+myPet.adopted+" "+myPet.markings+" "+myPet.breed);
+
 
 //take input from each detail into variables
 //(example: var age = $("#petAge").val(); )
