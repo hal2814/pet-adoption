@@ -20,7 +20,7 @@ function isAdopted(bool){
 //get pet details (aka: name, age, breed and markings)
 
 Pet.prototype.display = function () {
-  return "Pet name: "+this.petName+ "<br>Age: "+this.age+"<br>Adoption status: "+isAdopted(this.adopted)+"<br>Markings: "+this.markings+"<br>breed: "+this.breed;
+  return "<u>Pet name: </u>"+this.petName+ "<br><u>Age: </u>"+this.age+"<br><u>Adoption status: </u>"+isAdopted(this.adopted)+"<br><u>Markings: </u>"+this.markings+"<br><u>breed: </u>"+this.breed;
 };
 
 //Front End-----------------------------------------|
